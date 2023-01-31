@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: ./app
+      target: dev
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true
+    container_name: icf_tech_react_test_fe
+    ports:
+      - 3000:3000
+    volumes:
+      - ./app:/app
+      - /app/node_modules
