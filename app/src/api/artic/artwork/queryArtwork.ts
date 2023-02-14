@@ -2,10 +2,12 @@ import axios, { AxiosResponse } from "axios";
 import { Artic_response, SearchParams } from "../types";
 import { CollectionParamsArtwork } from "./types";
 
-const queryArtwork = async (
-  params?: CollectionParamsArtwork,
-  searchParams?: SearchParams
-) => {
+export interface QueryArtworkParams {
+  params?: CollectionParamsArtwork;
+  searchParams?: SearchParams;
+}
+
+const queryArtwork = async ({ params, searchParams }: QueryArtworkParams) => {
   return axios
     .get(
       `https://api.artic.edu/api/v1/artworks${searchParams ? "/search" : ""}`,
