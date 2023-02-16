@@ -1,3 +1,7 @@
+/*
+    As default useDispatch and useSelector is restricted by eslint config, disabling the checking for the next line is needed
+*/
+// eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import type { RootState, AppDispatch } from "./store";
 
