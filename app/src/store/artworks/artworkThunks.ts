@@ -44,7 +44,7 @@ export const fetchArtworks = createAsyncThunk(
       .then((response) => {
         const indexedCollection = assignIndexToCollection(
           response.data,
-          response.pagination.offset
+          response.pagination?.offset || 0
         );
         dispatch(artworksFetchSuccess(indexedCollection));
       })

@@ -7,7 +7,7 @@ import { Artwork } from "./artwork/types";
 export type Artic_data = Artwork;
 
 export interface Artic_response {
-  pagination: Pagination;
+  pagination?: Pagination;
   data: Artic_data[];
   info: Info;
   config: Config;
