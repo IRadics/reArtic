@@ -33,7 +33,7 @@ export const fetchArtworks = createAsyncThunk(
 
     let alreadyFetched = false;
     if (isNewQuery(prevParams, params)) {
-      dispatch(artworksQueryReset);
+      dispatch(artworksQueryReset());
     } else {
       alreadyFetched = isAlreadyFetched(fetchedCollection, page, limit);
     }
