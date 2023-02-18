@@ -1,21 +1,15 @@
 const log = (message: any, level: "log" | "warn" | "error" = "log") => {
   switch (level) {
     case "log":
-      {
-        console.log(message);
-      }
+      console.log(message);
 
       break;
     case "warn":
-      {
-        console.warn(message);
-      }
+      console.warn(message);
 
       break;
     case "error":
-      {
-        console.error(message);
-      }
+      console.error(message);
 
       break;
   }
