@@ -1,0 +1,19 @@
+@use "variables" as *;
+
+.logo {
+  border: 1px solid black;
+  padding: 12px;
+  font-family: monospace;
+  letter-spacing: 6px;
+}
+
+.color1 {
+  color: $accent_color_1;
+}
+
+.color2 {
+  color: $accent_color_2;
+}
+.color3 {
+  color: $accent_color_3;
+}

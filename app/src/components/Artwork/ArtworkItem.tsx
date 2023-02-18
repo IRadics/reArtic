@@ -19,18 +19,14 @@ const ArtworkItem = ({ item, className }: ArtworkItemProps) => {
       ></ButtonFavourite>
       <div className={`artworkItem ${className ? className : ""}`}>
         <div className="artworkItem-thumbnail">
-          <img src={getImage(item.image_id, "sm")} alt={item.title} />
+          <img src={getImage(item.image_id, "sm")} alt="" />
         </div>
         <div className="artworkItem-info">
-          <h2 className=" artworkItem-title">{item.title}</h2>
-          <span className="t3 artworkItem-title">{item.artist_title}</span>
-          <br />
-          <span className="t4 artworkItem-title">
+          <h4 className="t4 artworkItem-title">{item.title}</h4>
+          <span className="t5 artworkItem-classification">
             {item.classification_title}
-            {item.material_titles.length
-              ? ", " + item.material_titles.join(", ")
-              : ""}
           </span>
+          <span className="t4 artworkItem-artist">{item.artist_title}</span>
         </div>
       </div>
     </Card>

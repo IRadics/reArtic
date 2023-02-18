@@ -1,3 +1,14 @@
+@use "variables" as *;
+
 .App {
   text-align: center;
+}
+
+main {
+  position: relative;
+  max-width: $main_app_width;
+  margin: 0 auto;
+  min-height: calc(100vh - $header_height);
+  top: $header_height;
+  padding: 36px 24px;
 }

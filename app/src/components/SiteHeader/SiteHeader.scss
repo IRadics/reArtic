@@ -1,0 +1,14 @@
+@use "variables" as *;
+
+.header {
+  padding: 0 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  width: 100vw;
+  position: fixed;
+  z-index: 100;
+  height: $header_height;
+  box-shadow: 0px 1px 10px black;
+}
