@@ -12,6 +12,7 @@ export type ArtworkField = keyof Artwork;
 
 export interface CollectionParamsArtwork extends CollectionParams {
   fields?: ArtworkField[];
+  include?: ("artist_pivots" | "dates" | "place_pivots" | "sites")[];
 }
 
 export interface Artwork {
