@@ -90,7 +90,7 @@ export interface SearchParams {
   /**
    * For complex queries, you can pass Elasticsearch domain syntax queries here
    */
-  query?: string;
+  query?: object;
   /**
    * Used in conjunction with query
    */
@@ -98,7 +98,7 @@ export interface SearchParams {
   /**
    * Starting point of results. Pagination via Elasticsearch conventions
    */
-  from?: string;
+  from?: number;
   /**
    * Number of results to return. Pagination via Elasticsearch conventions
    */
