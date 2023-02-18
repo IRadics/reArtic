@@ -1,9 +1,17 @@
+$main_app_width: 1600px;
+$header_height: 84px;
+
 $accent_width: 2px;
+
+$accent_color_1: rgb(202, 0, 0);
+$accent_color_2: rgb(26, 158, 0);
+$accent_color_3: rgb(0, 77, 179);
+
 $accent_color: linear-gradient(
   90deg,
-  rgb(202, 0, 0) 0%,
-  rgb(26, 158, 0) 50%,
-  rgb(0, 77, 179) 100%
+  $accent_color_1 0%,
+  $accent_color_2 50%,
+  $accent_color_3 100%
 );
 $component_color: rgb(240, 240, 240);
 $box_shadow_color: rgb(161, 161, 161);
