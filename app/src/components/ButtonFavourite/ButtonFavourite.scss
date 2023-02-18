@@ -1,0 +1,31 @@
+$width: 30px;
+$height: 50px;
+
+.buttonFavourite {
+  position: relative;
+  height: height;
+  width: $width;
+  text-align: center;
+  --baseColor: rgb(155, 0, 0);
+  --starColor: transparent;
+  cursor: pointer;
+  &:hover {
+    --baseColor: rgb(190, 0, 0);
+
+    transition-delay: 0ms;
+    .tooltip {
+      visibility: visible;
+      transition-delay: 1000ms;
+    }
+  }
+
+  svg {
+    height: height;
+    width: $width;
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+  }
+}
+
+.enabled {
+  --starColor: yellow;
+}

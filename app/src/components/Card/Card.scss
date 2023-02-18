@@ -1,0 +1,18 @@
+@use "variables" as *;
+
+.card {
+  position: relative;
+  $border-radius: 2px;
+  box-shadow: 3px 3px $box_shadow_color;
+  border-radius: $border-radius;
+  padding: $accent_width;
+  background: $accent_color;
+  &-content {
+    position: relative;
+    border-radius: $border-radius;
+    background-color: $component_color;
+    width: 100%;
+    height: 100%;
+    padding: $card_padding_y $card_padding_x;
+  }
+}

@@ -1,0 +1,26 @@
+@use "variables" as *;
+
+.artworkItem {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+  &-info {
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+  }
+
+  &-fav {
+    position: absolute;
+    top: -$accent_width * 3;
+    right: $card_padding_x;
+    z-index: 1;
+  }
+}
