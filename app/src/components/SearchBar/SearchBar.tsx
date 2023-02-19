@@ -9,7 +9,7 @@ export const SearchBar = () => {
   const navigate = useNavigateIfNew();
 
   const onSubmit = () => {
-    if (value) navigate(`artworks/search?${value}`);
+    if (value) navigate(`artwork/search?q=${value}`);
   };
 
   return (

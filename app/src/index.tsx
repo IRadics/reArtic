@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { store } from "./store/store";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PageMain from "pages/PageMain/PageMain";
+import PageArtworkSearch from "pages/PageArtworkSearch/PageArtworkSearch";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <PageMain />,
+      },
+      {
+        path: "artwork/search",
+        element: <PageArtworkSearch />,
       },
     ],
   },

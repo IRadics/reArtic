@@ -1,0 +1,11 @@
+@use "variables" as *;
+
+.pageArtworkSearch {
+  &-pageInfo {
+    text-align: center;
+  }
+  &-content {
+    padding-top: $padding_primary;
+    padding-bottom: $padding_primary;
+  }
+}

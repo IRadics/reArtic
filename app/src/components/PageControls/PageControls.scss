@@ -1,0 +1,21 @@
+@use "variables" as *;
+
+.pageControls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  .button {
+    @include t4;
+  }
+
+  &-selected {
+    background-color: var(--button_active_color);
+  }
+  &-page,
+  &-perPage {
+    align-items: center;
+    display: flex;
+    gap: 6px;
+  }
+}
