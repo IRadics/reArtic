@@ -1,19 +1,24 @@
 @use "variables" as *;
 
-.logo {
-  border: 1px solid black;
+.siteTitle {
+  border: 1px solid var(--primary-text-color);
   padding: 12px;
   font-family: monospace;
   letter-spacing: 6px;
+  height: 100%;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .color1 {
-  color: $accent_color_1;
+  color: var(--accent_color_1);
 }
 
 .color2 {
-  color: $accent_color_2;
+  color: var(--accent_color_2);
 }
 .color3 {
-  color: $accent_color_3;
+  color: var(--accent_color_3);
 }

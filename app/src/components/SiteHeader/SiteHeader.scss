@@ -1,14 +1,22 @@
 @use "variables" as *;
 
 .header {
-  padding: 0 12px;
+  padding: 12px $padding_primary;
   display: flex;
   justify-content: space-between;
+  gap: $padding_primary;
   align-items: center;
-  background-color: white;
-  width: 100vw;
+  background-color: var(--header-color);
+  width: 100%;
   position: fixed;
   z-index: 100;
   height: $header_height;
-  box-shadow: 0px 1px 10px black;
+  box-shadow: 0px 1px 10px var(--box_shadow_color);
+
+  &-left {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: $padding_primary;
+  }
 }

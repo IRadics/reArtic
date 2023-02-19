@@ -1,0 +1,60 @@
+@use "variables" as *;
+
+.searchBar-container {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 400px;
+  max-width: $main_app_width;
+  border: 1px solid var(--primary-text-color);
+}
+
+.searchBar {
+  background-color: transparent;
+  min-width: 0;
+  width: 100%;
+  height: 80%;
+  font-size: 1em;
+  border: none;
+  color: var(--primary-text-color);
+  padding-left: 1em;
+  caret-color: var(--primary-text-color);
+}
+
+.searchBar::placeholder {
+  color: var(--primary-text-color);
+  opacity: 0.3;
+}
+
+.searchBar:hover::placeholder {
+  color: var(--primary-text-color);
+  opacity: 0.6;
+}
+
+.searchBar:focus::placeholder {
+  color: var(--primary-text-color);
+  opacity: 1;
+}
+
+.searchBar:focus-visible {
+  outline: none;
+}
+
+.searchBar-icon:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.searchBar-icon {
+  opacity: 0.6;
+  height: 100%;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  font-size: 100%;
+  padding: 10px;
+  svg {
+    height: 50%;
+  }
+}

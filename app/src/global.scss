@@ -1,24 +1,26 @@
+@use "variables" as *;
+
 .t1,
 h1 {
-  font-size: 28px;
+  @include t1;
 }
 
 .t2,
 h2 {
-  font-size: 24px;
+  @include t2;
 }
 
 .t3,
 h3 {
-  font-size: 20px;
+  @include t3;
 }
 
 .t4,
 h4 {
-  font-size: 16px;
+  @include t4;
 }
 
 .t5,
-h4 {
-  font-size: 14px;
+h5 {
+  @include t5;
 }

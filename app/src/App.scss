@@ -10,5 +10,5 @@ main {
   margin: 0 auto;
   min-height: calc(100vh - $header_height);
   top: $header_height;
-  padding: 36px 24px;
+  padding: 36px $padding_primary;
 }

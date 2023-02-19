@@ -1,0 +1,22 @@
+@use "variables" as *;
+
+.button {
+  @include t3;
+  height: 100%;
+  padding: 12px;
+  border: 1px solid var(--primary-text-color);
+  font-family: monospace;
+  transition: all 100ms;
+
+  &:hover {
+    border-color: var(--button_hover_color);
+    color: var(--button_hover_color);
+  }
+  &:active {
+    background-color: var(--button_active_color);
+  }
+  //disable text selection
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

@@ -1,19 +1,68 @@
 $main_app_width: 1600px;
 $header_height: 84px;
-
 $accent_width: 2px;
-
-$accent_color_1: rgb(202, 0, 0);
-$accent_color_2: rgb(26, 158, 0);
-$accent_color_3: rgb(0, 77, 179);
-
-$accent_color: linear-gradient(
-  90deg,
-  $accent_color_1 0%,
-  $accent_color_2 50%,
-  $accent_color_3 100%
-);
-$component_color: rgb(240, 240, 240);
-$box_shadow_color: rgb(161, 161, 161);
 $card_padding_x: 24px;
 $card_padding_y: 50px;
+$padding_primary: 24px;
+
+@mixin themeCommon {
+  --accent_color_1: rgb(202, 0, 0);
+  --accent_color_2: rgb(26, 158, 0);
+  --accent_color_3: rgb(0, 77, 179);
+  --accent_color: linear-gradient(
+    90deg,
+    var(--accent_color_1) 0%,
+    var(--accent_color_2) 50%,
+    var(--accent_color_3) 100%
+  );
+}
+
+.lightTheme {
+  @at-root html[data-theme="light"] {
+    @include themeCommon;
+    background-color: rgb(255, 255, 255);
+    color: var(--primary-text-color);
+    --header-color: white;
+    --primary-text-color: black;
+    --primary-text-color-hover: rgba(0, 0, 0, 0.5);
+    --component_color: rgb(240, 240, 240);
+    --box_shadow_color: rgb(161, 161, 161);
+    --button_active_color: rgba(0, 0, 0, 0.1);
+    --button_hover_color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.darkTheme {
+  @at-root html[data-theme="dark"] {
+    @include themeCommon;
+    background-color: rgb(0, 0, 0);
+    color: var(--primary-text-color);
+    --header-color: rgb(30, 30, 30);
+    --primary-text-color: rgb(255, 255, 255);
+    --primary-text-color-hover: rgba(255, 255, 255, 0.5);
+    --component_color: rgb(30, 30, 30);
+    --box_shadow_color: rgb(0, 0, 0);
+    --button_active_color: rgba(255, 255, 255, 0.3);
+    --button_hover_color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@mixin t1 {
+  font-size: 28px;
+}
+
+@mixin t2 {
+  font-size: 24px;
+}
+
+@mixin t3 {
+  font-size: 20px;
+}
+
+@mixin t4 {
+  font-size: 16px;
+}
+
+@mixin t5 {
+  font-size: 14px;
+}
