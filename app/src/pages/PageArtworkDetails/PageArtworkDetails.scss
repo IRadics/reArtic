@@ -1,0 +1,28 @@
+@use "variables" as *;
+
+.pageArtworkDetails {
+  text-align: center;
+  &-image {
+    margin: auto;
+    width: 100%;
+    img {
+      object-fit: scale-down;
+      width: 100%;
+      max-height: 600px;
+    }
+  }
+  &-pageInfo {
+    text-align: center;
+  }
+  &-info {
+    border-spacing: 12px;
+
+    td {
+      text-align: left;
+    }
+    td:first-child {
+      font-weight: bold;
+      padding-right: 24px;
+    }
+  }
+}

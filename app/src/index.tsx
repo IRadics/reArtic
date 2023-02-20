@@ -8,6 +8,7 @@ import { store } from "./store/store";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PageMain from "pages/PageMain/PageMain";
 import PageArtworkSearch from "pages/PageArtworkSearch/PageArtworkSearch";
+import PageArtworkDetails from "pages/PageArtworkDetails/PageArtworkDetails";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "artwork/search",
         element: <PageArtworkSearch />,
+      },
+      {
+        path: "artwork/:id",
+        element: <PageArtworkDetails />,
       },
     ],
   },

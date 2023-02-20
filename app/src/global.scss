@@ -24,3 +24,7 @@ h4 {
 h5 {
   @include t5;
 }
+
+hr {
+  color: var(--primary-text-color);
+}
