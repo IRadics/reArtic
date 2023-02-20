@@ -84,9 +84,7 @@ const PageArtworks = ({
       {!favouritesMode && (
         <SearchBar
           className="pageArtworks-searchBar"
-          onSubmit={(searchTerm) =>
-            handlePageControls(page, perPage, searchTerm)
-          }
+          onSubmit={(searchTerm) => handlePageControls(1, perPage, searchTerm)}
         ></SearchBar>
       )}
       {pageControls}
