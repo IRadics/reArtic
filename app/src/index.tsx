@@ -6,22 +6,22 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import PageMain from "pages/PageMain/PageMain";
-import PageArtworkSearch from "pages/PageArtworkSearch/PageArtworkSearch";
+import PageArtworks from "pages/PageArtworks/PageArtworks";
 import PageArtworkDetails from "pages/PageArtworkDetails/PageArtworkDetails";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+
     children: [
       {
-        path: "/",
-        element: <PageMain />,
+        path: "artwork/",
+        element: <PageArtworks />,
       },
       {
-        path: "artwork/search",
-        element: <PageArtworkSearch />,
+        path: "artwork/favourites",
+        element: <PageArtworks favouritesMode={true} />,
       },
       {
         path: "artwork/:id",

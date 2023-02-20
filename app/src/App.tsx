@@ -9,6 +9,7 @@ function App() {
   //initial theme setup
   const theme = getTheme();
   document.documentElement.setAttribute("data-theme", theme);
+
   return (
     <>
       <SiteHeader />

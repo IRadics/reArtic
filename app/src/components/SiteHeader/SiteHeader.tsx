@@ -1,21 +1,22 @@
 import Button from "components/Button/Button";
-import { SearchBar } from "components/SearchBar/SearchBar";
 import SiteTitle from "components/SiteTitle/SiteTitle";
 import ThemeChanger from "components/ThemeChanger/ThemeChanger";
-import { useNavigateIfNew } from "hooks/useNavigateIfNew";
+
+import { useNavigate } from "react-router-dom";
 
 import "./SiteHeader.scss";
 
 const SiteHeader = () => {
-  const navigate = useNavigateIfNew();
+  const navigate = useNavigate();
 
   return (
     <div className="header">
       <div className="header-left">
         <SiteTitle />
-        <Button onClick={() => navigate("/")}>artWorks</Button>
-        <Button>favourites</Button>
-        <SearchBar></SearchBar>
+        <Button onClick={() => navigate("/artwork")}>artWorks</Button>
+        <Button onClick={() => navigate("/artwork/favourites")}>
+          favourites
+        </Button>
       </div>
 
       <ThemeChanger />

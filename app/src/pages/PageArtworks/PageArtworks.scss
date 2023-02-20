@@ -1,11 +1,18 @@
 @use "variables" as *;
 
-.pageArtworkSearch {
+.pageArtworks {
   &-pageInfo {
     text-align: center;
   }
   &-content {
     padding-top: $padding_primary;
     padding-bottom: $padding_primary;
+  }
+
+  &-searchBar {
+    margin: auto;
+    height: 50px;
+    width: 100%;
+    margin-bottom: $padding_primary;
   }
 }

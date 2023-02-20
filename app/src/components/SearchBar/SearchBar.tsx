@@ -1,23 +1,27 @@
 import "./SearchBar.scss";
 import { useState } from "react";
-import { useNavigateIfNew } from "hooks/useNavigateIfNew";
 import { ReactComponent as SearchIcon } from "./../../assets/icons/search.svg";
 
-export const SearchBar = () => {
+interface SearchBarProps {
+  className?: string;
+  onSubmit: (searchTerm: string) => void;
+}
+
+export const SearchBar = ({ className, onSubmit }: SearchBarProps) => {
   const [value, setValue] = useState<string>();
 
-  const navigate = useNavigateIfNew();
-
-  const onSubmit = () => {
-    if (value) navigate(`artwork/search?q=${value}`);
+  const handleSubmit = () => {
+    if (value) {
+      onSubmit(value);
+    }
   };
 
   return (
     <form
-      className={"searchBar-container"}
+      className={`searchBar-container ${className ? className : ""}`}
       onSubmit={(e) => {
         e.preventDefault();
-        onSubmit();
+        handleSubmit();
       }}
     >
       <input
@@ -27,7 +31,7 @@ export const SearchBar = () => {
           setValue(e.currentTarget.value);
         }}
       ></input>
-      <div onClick={() => onSubmit()} className="searchBar-icon">
+      <div onClick={handleSubmit} className="searchBar-icon">
         <SearchIcon />
       </div>
     </form>
