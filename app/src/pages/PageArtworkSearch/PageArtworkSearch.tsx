@@ -24,13 +24,7 @@ const PageArtworkSearch = () => {
     params: {
       page: page,
       limit: perPage,
-      fields: [
-        "id",
-        "title",
-        "image_id",
-        "classification_title",
-        "artist_title",
-      ],
+      fields: ["id", "title", "image_id"],
     },
     searchParams: {
       q: query,
