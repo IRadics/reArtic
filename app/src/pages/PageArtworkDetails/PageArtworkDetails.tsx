@@ -1,7 +1,9 @@
 import getImage from "api/artic/getImage";
+import ButtonFavouriteWithText from "components/ButtonFavourite/ButtonFavouriteWithText";
 import Card from "components/Card/Card";
 import LoadingAnimation from "components/LoadingAnimation/LoadingAnimation";
 import useArtworksQuery from "hooks/articQueries/useArtworksQuery";
+import useFavourite from "hooks/articQueries/useFavourite";
 import { useParams } from "react-router-dom";
 
 import "./PageArtworkDetails.scss";
@@ -9,9 +11,11 @@ import "./PageArtworkDetails.scss";
 const PageArtworkDetails = () => {
   const { id } = useParams();
 
+  const idNumber = parseInt(id || "-1");
+
   const { collection, error, isLoading } = useArtworksQuery({
     params: {
-      ids: [id ? parseInt(id) : -1],
+      ids: [idNumber],
       fields: [
         "id",
         "title",
@@ -26,6 +30,8 @@ const PageArtworkDetails = () => {
     },
   });
 
+  const { isFavourite, toggleFavourite } = useFavourite("artworks", idNumber);
+
   if (isLoading) return <LoadingAnimation />;
   if (!isLoading && collection.length === 0)
     return (
@@ -34,7 +40,12 @@ const PageArtworkDetails = () => {
         all
       </h2>
     );
-
+  if (error)
+    return (
+      <h2 className="pageArtworkSearch-pageInfo">
+        There has been an error fetching your request
+      </h2>
+    );
   const artwork = collection[0];
 
   if (collection.length > 0)
@@ -67,6 +78,10 @@ const PageArtworkDetails = () => {
               </tr>
             </tbody>
           </table>
+          <ButtonFavouriteWithText
+            enabled={isFavourite}
+            onClick={() => toggleFavourite()}
+          />
         </Card>
       </div>
     );

@@ -3,6 +3,7 @@ import getImage from "api/artic/getImage";
 import Button from "components/Button/Button";
 import ButtonFavourite from "components/ButtonFavourite/ButtonFavourite";
 import Card from "components/Card/Card";
+import useFavourite from "hooks/articQueries/useFavourite";
 import { useNavigate } from "react-router-dom";
 import { IndexedCollectionItem } from "store/store";
 import shortenText from "utils/shortenText";
@@ -18,10 +19,14 @@ const ArtworkItem = ({ item, className }: ArtworkItemProps) => {
   const openDetails = (id: number) => {
     navigate(`/artwork/${id}`);
   };
+
+  const { isFavourite, toggleFavourite } = useFavourite("artworks", item.id);
+
   return (
     <Card>
       <ButtonFavourite
-        enabled={true}
+        onClick={toggleFavourite}
+        enabled={isFavourite}
         className="artworkItem-fav"
       ></ButtonFavourite>
       <div className={`artworkItem ${className ? className : ""}`}>

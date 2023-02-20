@@ -11,12 +11,6 @@ $height: 50px;
   cursor: pointer;
   &:hover {
     --baseColor: rgb(190, 0, 0);
-
-    transition-delay: 0ms;
-    .tooltip {
-      visibility: visible;
-      transition-delay: 1000ms;
-    }
   }
 
   svg {
@@ -28,4 +22,19 @@ $height: 50px;
 
 .enabled {
   --starColor: yellow;
+}
+
+.buttonFavouriteWithText {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  gap: 12px;
+  svg {
+    height: 30px;
+  }
+  .buttonFavourite:hover {
+    all: unset;
+    --baseColor: rgb(155, 0, 0);
+  }
 }
