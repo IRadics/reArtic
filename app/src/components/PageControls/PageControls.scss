@@ -5,10 +5,17 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 6px;
+
   .button {
     @include t4;
   }
 
+  &-perPageText {
+    width: 100%;
+    text-align: right;
+    margin-right: 6px;
+  }
   &-selected {
     background-color: var(--button_active_color);
   }
@@ -17,5 +24,17 @@
     align-items: center;
     display: flex;
     gap: 6px;
+  }
+
+  @media only screen and (max-width: 620px) {
+    flex-direction: column;
+    &-page,
+    &-perPage {
+      gap: 12px;
+    }
+    &-perPageText {
+      text-align: center;
+      margin: 0;
+    }
   }
 }

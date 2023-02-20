@@ -1,9 +1,8 @@
 @use "variables" as *;
 
 .pageArtworks {
-  &-pageInfo {
-    text-align: center;
-  }
+  text-align: center;
+
   &-content {
     padding-top: $padding_primary;
     padding-bottom: $padding_primary;

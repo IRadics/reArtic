@@ -1,5 +1,7 @@
 @use "variables" as *;
 
+$gap_mobile: 12px;
+
 .header {
   padding: 12px $padding_primary;
   display: flex;
@@ -12,11 +14,29 @@
   z-index: 100;
   height: $header_height;
   box-shadow: 0px 1px 10px var(--box_shadow_color);
+  @media only screen and (max-width: 620px) {
+    gap: $gap_mobile;
+    .button {
+      @include t4;
+    }
+    .siteTitle {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 340px) {
+    .button {
+      @include t5;
+    }
+  }
 
   &-left {
     height: 100%;
     display: flex;
     justify-content: flex-start;
     gap: $padding_primary;
+    @media only screen and (max-width: 620px) {
+      gap: $gap_mobile;
+    }
   }
 }

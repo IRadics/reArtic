@@ -50,11 +50,28 @@ const PageArtworks = ({
     <PageControls
       currentItemsPerPage={perPage}
       selectableItemsPerPage={[25, 50, 100]}
-      onNext={() => handlePageControls(page + 1)}
-      onPrevious={() => handlePageControls(Math.max(page - 1, 1))}
-      onItemsPerPageChanged={(perPage) => handlePageControls(page, perPage)}
+      onNext={() => handlePageControls(page + 1, perPage, query)}
+      onPrevious={() =>
+        handlePageControls(Math.max(page - 1, 1), perPage, query)
+      }
+      onItemsPerPageChanged={(perPage) =>
+        handlePageControls(page, perPage, query)
+      }
     />
   );
+
+  const header = () => {
+    let infoText = "Artworks";
+    if (favouritesMode) infoText = "Favourite artworks";
+    if (query) infoText = `Results for "${query}"`;
+
+    return (
+      <>
+        <h1 className="pageArtworks-pageInfo">{infoText}</h1>
+        <h5 className="pageArtworks-pageNr">Page {page}</h5>
+      </>
+    );
+  };
 
   const content = () => {
     if (isLoading) return <LoadingAnimation />;
@@ -67,13 +84,8 @@ const PageArtworks = ({
     if (collection.length === 0)
       return <h2 className="pageArtworks-pageInfo">No results</h2>;
 
-    let infoText = "Artworks";
-    if (favouritesMode) infoText = "Favourite artworks";
-    if (query) infoText = `Results for "${query}"`;
-
     return (
       <>
-        <h1 className="pageArtworks-pageInfo">{infoText}</h1>
         <ArtworkList collection={collection} />
       </>
     );
@@ -84,12 +96,11 @@ const PageArtworks = ({
       {!favouritesMode && (
         <SearchBar
           className="pageArtworks-searchBar"
-          onSubmit={(searchTerm) =>
-            handlePageControls(page, perPage, searchTerm)
-          }
+          onSubmit={(searchTerm) => handlePageControls(1, perPage, searchTerm)}
         ></SearchBar>
       )}
       {pageControls}
+      {header()}
       <div className="pageArtworks-content">{content()}</div>
       {!isLoading && collection.length > 0 && pageControls}
     </div>

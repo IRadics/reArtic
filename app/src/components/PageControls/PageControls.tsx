@@ -25,8 +25,8 @@ const PageControls = ({
           <Button onClick={onPrevious}>Previous</Button>
           <Button onClick={onNext}>Next</Button>
         </div>
+        <span className="pageControls-perPageText">Per page:</span>
         <div className="pageControls-perPage">
-          Results per page:
           {selectableItemsPerPage.map((perPage) => {
             return (
               <Button
