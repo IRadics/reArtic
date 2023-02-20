@@ -19,8 +19,6 @@ FROM base as prod
 
 EXPOSE 3000
 
-RUN npm ci
-
 RUN npm install -g serve
 
 RUN npm run build
