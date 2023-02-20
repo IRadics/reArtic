@@ -50,9 +50,13 @@ const PageArtworks = ({
     <PageControls
       currentItemsPerPage={perPage}
       selectableItemsPerPage={[25, 50, 100]}
-      onNext={() => handlePageControls(page + 1)}
-      onPrevious={() => handlePageControls(Math.max(page - 1, 1))}
-      onItemsPerPageChanged={(perPage) => handlePageControls(page, perPage)}
+      onNext={() => handlePageControls(page + 1, perPage, query)}
+      onPrevious={() =>
+        handlePageControls(Math.max(page - 1, 1), perPage, query)
+      }
+      onItemsPerPageChanged={(perPage) =>
+        handlePageControls(page, perPage, query)
+      }
     />
   );
 
