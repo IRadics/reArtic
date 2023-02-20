@@ -21,7 +21,7 @@ export function isAlreadyFetched<T>(
   page: number,
   limit: number
 ) {
-  const from = (page - 1) * limit - 1;
+  const from = (page - 1) * limit;
   const to = page * limit - 1;
   let indexes: number[] = [];
   for (var i = from; i <= to; i++) {
