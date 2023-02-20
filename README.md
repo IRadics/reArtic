@@ -5,6 +5,10 @@ Notes:
 - There may be some pagination issues that needs to be fixed
 - Some adjustments needed for smaller mobile screens.
 
+Both Docker dev and prod **default port is 3000**
+
+Prod can be changed with **PORT** environment variable.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
