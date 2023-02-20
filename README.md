@@ -2,8 +2,8 @@ Application created for ICF tech interviewing process
 
 Notes:
 
-- There may be some pagination issues that needs to be fixed
-- Some adjustments needed for smaller mobile screens.
+- ~~There may be some pagination issues that needs to be fixed~~ Done
+- ~~Some adjustments needed for smaller mobile screens.~~ Done
 
 Both Docker dev and prod **default port is 3000**
 
