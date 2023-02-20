@@ -3,6 +3,7 @@ export type FavouriteType = "artworks";
 const delimiter = ",";
 
 export const setFavourite = (id: number, type: FavouriteType) => {
+  if (isNaN(id)) return;
   const localStorageKey = `reartic_fav_${type}`;
 
   const favourites = getFavourites(type);
@@ -27,7 +28,10 @@ export const getFavourites = (type: FavouriteType) => {
     localStorage
       .getItem(localStorageKey)
       ?.split(delimiter)
-      .map((id) => parseInt(id)) || []
+      .map((id) => parseInt(id))
+      .filter((id) => {
+        return !isNaN(id);
+      }) || []
   );
 };
 
